@@ -1,0 +1,64 @@
+@import '../../index.scss';
+
+.carrousel {
+	position: relative;
+	width: 100%;
+	max-width: 1240px;
+	margin: 0 auto 30px;
+	text-align: center;
+
+	@include media-mobile($breakpoint) {
+		margin-bottom: 15px;
+	}
+
+	&__image {
+		width: 100%;
+		height: 415px;
+		border-radius: 25px;
+		object-fit: cover;
+		box-sizing: border-box;
+
+		@include media-mobile($breakpoint) {
+			width: inherit;
+			height: 225px;
+		}
+	}
+
+	&__counter {
+		position: absolute;
+		color: $second-color;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+		width: 100%;
+		top: 86%;
+
+		@include media-mobile($breakpoint) {
+			font-size: 12px;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		font-size: 96px;
+		color: $second-color;
+		cursor: pointer;
+		z-index: 10;
+
+		@include media-mobile($breakpoint) {
+			font-size: 24px;
+		}
+
+		&--prev {
+			left: 23px;
+		}
+
+		&--next {
+			right: 23px;
+		}
+	}
+}

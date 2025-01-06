@@ -1,0 +1,32 @@
+@import '../../index.scss';
+
+.footer {
+	background-color: black;
+	height: 209px;
+	width: 100%;
+	max-width: 1440px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto; /* Centrer horizontalement */
+
+	p {
+		color: white;
+		font-size: 24px;
+		margin-bottom: 29px;
+
+		@include media-mobile($breakpoint) {
+			font-size: 12px;
+			width: 132px;
+			height: 46px;
+			text-align: center;
+			margin-bottom: 58px;
+		}
+	}
+
+	&__logo {
+		width: 122px;
+		margin-top: 66px;
+	}
+}
