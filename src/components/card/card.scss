@@ -10,7 +10,7 @@
 		height: 340px;
 		border-radius: 10px;
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			height: 255px;
 		}
 	}

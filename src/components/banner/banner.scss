@@ -12,7 +12,7 @@
 	align-items: center;
 	border-radius: 25px;
 
-	@include media-mobile($breakpoint) {
+	@include media-mobile($breakpoint-mobile) {
 		height: 111px;
 		text-align: left;
 		margin-bottom: 22px;
@@ -26,7 +26,7 @@
 		z-index: 1;
 		font-size: 48px;
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			font-size: 24px;
 			width: 225px;
 			height: 48px;

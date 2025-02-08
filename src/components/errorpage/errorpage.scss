@@ -5,7 +5,7 @@
 	margin-bottom: 139px;
 	margin-top: 139px;
 
-	@include media-mobile($breakpoint) {
+	@include media-mobile($breakpoint-mobile) {
 		margin-bottom: 113px;
 		margin-top: 113px;
 	}
@@ -16,11 +16,11 @@
 		margin: 0;
 		padding-bottom: 139px;
 
-		@media screen and (min-width: $breakpoint) and (max-width: 900px) {
+		@include media-transition($breakpoint-mobile, $breakpoint-transition) {
 			font-size: 192px;
 		}
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			font-size: 96px;
 			padding-bottom: 113px;
 		}
@@ -32,11 +32,11 @@
 		margin: 0;
 		padding-bottom: 139px;
 
-		@media screen and (min-width: $breakpoint) and (max-width: 900px) {
+		@include media-transition($breakpoint-mobile, $breakpoint-transition) {
 			font-size: 27px;
 		}
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			font-size: 18px;
 			padding-bottom: 113px;
 		}
@@ -46,11 +46,11 @@
 		font-size: 18px;
 		color: $main-color;
 
-		@media screen and (min-width: $breakpoint) and (max-width: 900px) {
+		@include media-transition($breakpoint-mobile, $breakpoint-transition) {
 			font-size: 16px;
 		}
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			font-size: 14px;
 		}
 	}

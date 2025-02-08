@@ -2,30 +2,36 @@ import React, { useState, useEffect } from 'react';
 import Collapse from '../components/collapse/collapse.jsx';
 import Slideshow from '../components/slideshow/slideshow.jsx';
 import Information from '../components/information/information.jsx';
-import { useParams } from 'react-router-dom'; // Pour récupérer l'ID depuis l'URL
+import { useParams, useNavigate } from 'react-router-dom'; // Importation de useNavigate
 import '../index.scss';
+import '../components/collapse/collapse.scss';
 
 function Logement() {
 	const { id } = useParams(); // Récupère l'ID depuis l'URL
-	const [logement, setLogement] = useState(null);
+	const [logement, setLogement] = useState(null); // Null car les données du logement ne sont pas encore stockées.
+	const navigate = useNavigate(); // Initialisation du hook useNavigate
 
 	useEffect(() => {
-		// Charger les données du fichier JSON
-		fetch('/logement.json')
-			.then((response) => response.json())
+		fetch('/logement.json') //Demande les données depuis le fichier
+			.then((response) => response.json()) //Convertit la réponse en JSON
 			.then((data) => {
 				// Trouver le logement avec l'ID correspondant
-				const logementData = data.find((item) => item.id === id); // Comparer les IDs comme des chaînes de caractères
-				setLogement(logementData);
+				const logementData = data.find((item) => item.id === id); // Comparaison des IDs comme des chaînes de caractères
+				if (logementData) {
+					setLogement(logementData);
+				} else {
+					// Si le logement n'est pas trouvé, redirection vers la page d'erreur
+					navigate('/error');
+				}
 			})
 			.catch((error) =>
 				console.error('Erreur lors de la récupération des données :', error)
 			);
-	}, [id]); // Rechargement lorsque l'ID change
+	}, [id, navigate]); //UseEffect sera déclenché quand id ou navigate changera
 
-	// Vérification si 'logement' est null ou undefined avant d'afficher les Collapses
+	// Vérification si 'logement' est null ou undefined
 	if (!logement) {
-		return <div>Chargement en cours...</div>; // Affiche un message  pendant le chargement
+		return <div>Chargement en cours...</div>; // Affiche un message pendant le chargement
 	}
 
 	return (

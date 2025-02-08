@@ -16,7 +16,7 @@
 		font-size: 24px;
 		margin-bottom: 29px;
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			font-size: 12px;
 			width: 132px;
 			height: 46px;

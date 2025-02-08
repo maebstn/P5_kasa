@@ -16,14 +16,14 @@
 	padding-bottom: 43px;
 	box-sizing: border-box;
 
-	@include media-mobile($breakpoint) {
+	@include media-mobile($breakpoint-mobile) {
 		grid-template-columns: repeat(1, 1fr);
 		grid-gap: 20px;
 		background-color: $second-color;
 		padding: 0;
 	}
 
-	@media screen and (min-width: $breakpoint) and (max-width: 900px) {
+	@include media-transition($breakpoint-mobile, $breakpoint-transition) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }

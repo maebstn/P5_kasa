@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './galery.scss';
+import './gallery.scss';
 import Card from '../card/card.jsx';
 
 function Galery() {

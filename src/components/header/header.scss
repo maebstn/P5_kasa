@@ -9,7 +9,7 @@
 	max-width: 1240px;
 	width: 95%;
 
-	@include media-mobile($breakpoint) {
+	@include media-mobile($breakpoint-mobile) {
 		margin: 20px 19px 19px 19px;
 		width: inherit;
 	}
@@ -17,7 +17,7 @@
 	&__logo {
 		width: 210px;
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			width: 145px;
 		}
 	}
@@ -29,7 +29,7 @@
 		margin: 0;
 		list-style: none;
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			font-size: 12px;
 			text-transform: uppercase;
 			padding-left: 0;
@@ -41,7 +41,7 @@
 		text-decoration: none;
 		color: $main-color;
 
-		@include media-mobile($breakpoint) {
+		@include media-mobile($breakpoint-mobile) {
 			margin-left: 26px;
 		}
 

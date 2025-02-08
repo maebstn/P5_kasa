@@ -7,9 +7,17 @@ $grey-overlay: darken(rgba(0, 0, 0, 0.2), 20%);
 $light-grey: #f6f6f673;
 $mid-grey: #e3e3e3;
 
-$breakpoint: 768px;
-@mixin media-mobile($breakpoint) {
-	@media screen and (max-width: $breakpoint) {
+$breakpoint-mobile: 768px;
+$breakpoint-transition: 900px;
+
+@mixin media-mobile($breakpoint-mobile) {
+	@media screen and (max-width: $breakpoint-mobile) {
+		@content;
+	}
+}
+
+@mixin media-transition($min, $max) {
+	@media screen and (min-width: $min) and (max-width: $max) {
 		@content;
 	}
 }
@@ -34,7 +42,7 @@ h2 {
 	font-weight: 500;
 	font-size: 36px;
 
-	@include media-mobile($breakpoint) {
+	@include media-mobile($breakpoint-mobile) {
 		font-size: 18px;
 	}
 }
@@ -43,25 +51,8 @@ h3 {
 	margin: 0; // Supprime les marges par défaut
 	font-size: inherit; // Inhère la taille définie globalement (24px ici)
 
-	@include media-mobile($breakpoint) {
+	@include media-mobile($breakpoint-mobile) {
 		font-weight: 600;
-	}
-}
-
-.logement__collapse {
-	max-width: 1240px;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	gap: 76px;
-	margin: 0px auto 50px;
-	font-size: 18px;
-
-	@include media-mobile($breakpoint) {
-		flex-direction: column;
-		gap: 20px;
-		margin-bottom: 27px;
-		font-size: 13px;
 	}
 }
 

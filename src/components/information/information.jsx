@@ -1,7 +1,7 @@
-import React from 'react'; // Importe React pour pouvoir utiliser JSX et créer des composants
-import './information.scss'; // Importe les styles associés au composant Information
-import { faStar } from '@fortawesome/free-solid-svg-icons'; // Importe l'icône étoile de FontAwesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Importe le composant FontAwesomeIcon pour afficher les icônes
+import React from 'react';
+import './information.scss';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Information({ logement }) {
 	// Composant qui prend 'logement' comme prop
@@ -10,7 +10,7 @@ function Information({ logement }) {
 			{/* Conteneur principal */}
 			<div className="information__logement">
 				{/* Informations sur le logement */}
-				<h2 className="information__logement--title">{logement.title}</h2>{' '}
+				<h2 className="information__logement--title">{logement.title}</h2>
 				{/* Titre du logement */}
 				<p className="information__logement--location">{logement.location}</p>
 				{/* Localisation du logement */}
