@@ -3,7 +3,7 @@ import Home from '../../pages/Home';
 import About from '../../pages/About';
 import Logement from '../../pages/Logement';
 import ErrorPage from '../../pages/Error';
-import { Routes, Route } from 'react-router-dom'; // Importation correcte
+import { Routes, Route } from 'react-router-dom'; 
 
 function AppRouter() {
 	return (

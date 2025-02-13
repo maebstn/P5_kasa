@@ -10,12 +10,14 @@ $mid-grey: #e3e3e3;
 $breakpoint-mobile: 768px;
 $breakpoint-transition: 900px;
 
-@mixin media-mobile($breakpoint-mobile) {
-	@media screen and (max-width: $breakpoint-mobile) {
+//Mixin pour media query pour écran inférieur ou égal au breakpoint
+@mixin media-mobile($breakpoint) {
+	@media (max-width: $breakpoint) {
 		@content;
 	}
 }
 
+//Mixin pour media query pour écran entre breakpoint min et max
 @mixin media-transition($min, $max) {
 	@media screen and (min-width: $min) and (max-width: $max) {
 		@content;
