@@ -29,6 +29,11 @@ function Logement() {
 			);
 	}, [id, navigate]); //UseEffect sera déclenché quand id ou navigate changera
 
+	// Vérification si 'logement' est null ou undefined
+	if (!logement) {
+		return <div>Chargement en cours...</div>; // Affiche un message pendant le chargement
+	}
+
 	return (
 		<div className="main">
 			<div>
